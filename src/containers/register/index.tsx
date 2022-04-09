@@ -4,6 +4,7 @@ import { inject, observer } from 'mobx-react';
 import NewRouterStore from '../../mobx/router.store';
 import RegisterStore from './store';
 import Cep from '../../components/cep';
+import Github from '../../components/github';
 
 interface Props {
   router: NewRouterStore;
@@ -15,7 +16,7 @@ interface Props {
 export default class Register extends React.Component<Props> {
 
   render() {
-    const { zipcode, handleForm } = this.props.register;
+    const { zipcode, handleForm, github } = this.props.register;
 
     return (
       <Container>
@@ -32,13 +33,22 @@ export default class Register extends React.Component<Props> {
           </Grid.Row>
         </Grid>
         <Form>
-          <Form.Group widths='equal'>
+          <Form.Group widths='equal'  style={{ alignItems: 'flex-end' }}>
             <Form.Field>
               <label>Informe o CEP:</label>
               <input value={zipcode || ''} maxLength={8} name='zipcode' onChange={handleForm} placeholder='Ex 14405123' />
             </Form.Field>
             <Form.Field>
               <Cep zipCode={zipcode} />
+            </Form.Field>
+          </Form.Group>
+          <Form.Group widths='equal' style={{ alignItems: 'flex-end' }} >
+            <Form.Field>
+              <label>Informe o seu github:</label>
+              <input value={github || ''} maxLength={100} name='github' onChange={handleForm} placeholder='Ex juninmd' />
+            </Form.Field>
+            <Form.Field>
+              <Github userName={github} />
             </Form.Field>
           </Form.Group>
         </Form>
