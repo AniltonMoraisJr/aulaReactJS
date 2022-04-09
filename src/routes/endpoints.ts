@@ -1,4 +1,5 @@
 import { RouteProps } from "react-router-dom";
+import Cache from "../containers/cache";
 import Combustivel from "../containers/combustivel";
 import Home from "../containers/home";
 import Register from "../containers/register";
@@ -40,6 +41,7 @@ export const endpoints: EndPointsProps[] = [
     component: Register,
     exact: true,
   },
+  { path: `${publicUrl}/cache`, name: 'Cache', component: Cache, exact: true },
   {
     name: "Dropdown",
     subItens: [
