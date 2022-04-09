@@ -58,7 +58,7 @@ export default class MainMenu extends React.Component<Props> {
                         <Dropdown.Item
                           key={`${i}_subItem`}
                           onClick={() =>
-                            this.handleItemClick(null, { url: subItem.path! })
+                            this.handleItemClick(null, { url: subItem.path })
                           }
                         >
                           {subItem?.name}
