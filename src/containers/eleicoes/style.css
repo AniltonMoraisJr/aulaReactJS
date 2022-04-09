@@ -1,0 +1,41 @@
+.teclado{
+    text-align: center;
+    background-color: #e1e1e1;
+    height: 40%;
+  }
+  
+  .tecla{
+    margin: 4px;
+    background-color: black;
+    color: snow;
+    border-radius: 5px;
+    height: 16%;
+    width: 27%;
+  }
+  
+  .teclas{
+    background-color: #444;
+    height: 300px;
+  }
+  .opcoes{
+    font-size: 11px;
+    color: black;
+  }
+  
+  .branco{
+    height: 40px;
+    width: 75px;
+  }
+  .laranja{
+    height: 40px;
+    width: 75px;
+    background-color: #E67401;
+  }
+  .verde{
+    height: 50px;
+    width: 75px;
+    background-color: green;
+  }
+  .btnOpcao{
+    margin: 2px
+  }

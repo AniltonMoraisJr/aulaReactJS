@@ -1,6 +1,7 @@
 import { RouteProps } from "react-router-dom";
 import Cache from "../containers/cache";
 import Combustivel from "../containers/combustivel";
+import Eleicoes from "../containers/eleicoes";
 import Home from "../containers/home";
 import Register from "../containers/register";
 import Sobre from "../containers/sobre";
@@ -42,6 +43,7 @@ export const endpoints: EndPointsProps[] = [
     exact: true,
   },
   { path: `${publicUrl}/cache`, name: 'Cache', component: Cache, exact: true },
+  { path: `${publicUrl}/eleicoes`, name: 'Eleições', component: Eleicoes, exact: true },
   {
     name: "Dropdown",
     subItens: [
