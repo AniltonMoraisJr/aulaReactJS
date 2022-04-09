@@ -20,6 +20,10 @@ export default class Combustivel extends React.Component<Props> {
       submit();
     };
 
+    const breakCode = () => {
+      throw new Error("ERRROOOOO");
+    };
+
     return (
       <Container>
         <Grid divided="vertically">
@@ -39,7 +43,6 @@ export default class Combustivel extends React.Component<Props> {
             <Form.Field>
               <label>Preço da Gasolina</label>
               <input
-                step="any"
                 max="99"
                 value={gasolina}
                 onChange={handleForm}
@@ -51,7 +54,6 @@ export default class Combustivel extends React.Component<Props> {
             <Form.Field>
               <label>Preço do Etanol</label>
               <input
-                step="any"
                 max="99"
                 value={etanol}
                 onChange={handleForm}
@@ -62,6 +64,9 @@ export default class Combustivel extends React.Component<Props> {
             </Form.Field>
           </Form.Group>
           <Button type="submit">Consultar</Button>
+          <button type="button" onClick={breakCode}>
+            Break the world
+          </button>
         </Form>
       </Container>
     );

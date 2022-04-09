@@ -1,4 +1,5 @@
 import { router } from "./router.store";
 import { home } from "../containers/home/store";
 import { combustivel } from "../containers/combustivel/store";
-export { router, home, combustivel };
+import { starWars } from "../containers/star-wars/store";
+export { router, home, combustivel, starWars };
