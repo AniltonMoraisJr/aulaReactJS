@@ -1,6 +1,7 @@
 import { RouteProps } from "react-router-dom";
 import Combustivel from "../containers/combustivel";
 import Home from "../containers/home";
+import Register from "../containers/register";
 import Sobre from "../containers/sobre";
 import StarWars from "../containers/star-wars";
 import StarWarsDetails from "../containers/star-wars/details";
@@ -31,6 +32,12 @@ export const endpoints: EndPointsProps[] = [
   {
     path: `${publicUrl}/star-wars/:id`,
     component: StarWarsDetails,
+    exact: true,
+  },
+  {
+    path: `${publicUrl}/register`,
+    name: "Register",
+    component: Register,
     exact: true,
   },
   {
