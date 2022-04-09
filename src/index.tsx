@@ -1,17 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import "./apis/axios.api";
+import * as React from "react";
+import * as store from "./mobx";
+import Routes from "./routes";
+import { render } from "react-dom";
+import { createBrowserHistory } from "history";
+import { Provider } from "mobx-react";
+import { router } from "./mobx/";
+import { Router } from "react-router-dom";
+import { syncHistoryWithStore } from "mobx-react-router";
+import Loading from "./components/loading";
 
-ReactDOM.render(
+const rootElement = document.getElementById("root");
+const browserHistory = createBrowserHistory();
+
+const history = syncHistoryWithStore(browserHistory, router);
+
+render(
   <React.StrictMode>
-    <App />
+    <Provider {...store}>
+      <Loading />
+      <Router history={history}>
+        <Routes />
+      </Router>
+    </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  rootElement
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
